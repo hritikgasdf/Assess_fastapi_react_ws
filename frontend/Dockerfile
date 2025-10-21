@@ -17,12 +17,9 @@ RUN npm ci --legacy-peer-deps
 # Copy application code
 COPY . .
 
-# Create non-root user for security
-RUN addgroup -g 1000 appgroup && \
-    adduser -u 1000 -G appgroup -s /bin/sh -D appuser && \
-    chown -R appuser:appgroup /app
+RUN chown -R node:node /app
 
-USER appuser
+USER node
 
 # Expose Vite dev server port
 EXPOSE 5173

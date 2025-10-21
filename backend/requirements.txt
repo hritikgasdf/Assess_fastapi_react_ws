@@ -4,9 +4,12 @@ sqlalchemy[asyncio]
 asyncpg
 psycopg2-binary
 python-jose[cryptography]
-passlib[bcrypt]
+passlib
+argon2-cffi
+requests
 python-multipart
 pydantic
+pydantic[email]
 pydantic-settings
 python-dotenv
 alembic

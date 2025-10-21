@@ -59,7 +59,7 @@ services:
         echo '🌱 Seeding database...' &&
         python seed_data.py &&
         echo '🚀 Starting FastAPI server...' &&
-        uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+        uvicorn app.main:app --host 0.0.0.0 --port 8000
       "
     healthcheck:
       test: ["CMD", "python", "-c", "import requests; requests.get('http://localhost:8000/health', timeout=5)"]
@@ -102,4 +102,3 @@ volumes:
     driver: local
   backend_logs:
     driver: local
-  postgres_data:
